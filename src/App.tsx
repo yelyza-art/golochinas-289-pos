@@ -191,6 +191,7 @@ export default function App() {
     total_bs: number;
     tasa_bcv: number;
     libro: 'FISCAL' | 'PRIVADO';
+    metodo_pago: string;
   }) => {
     const nextCorrelativo = String(ventas.length + 1).padStart(8, '0');
     const hoyStr = new Date().toLocaleDateString('es-VE');
@@ -216,7 +217,7 @@ export default function App() {
       cliente: venta.cliente,
       tipo_precio: 'MIXTO',
       condicion_pago: venta.condicion_pago,
-      metodo_pago: 'SENIAT POS',
+      metodo_pago: venta.metodo_pago,
       items_json: JSON.stringify(venta.items),
       total_usd: venta.total_usd,
       total_bs: venta.total_bs,

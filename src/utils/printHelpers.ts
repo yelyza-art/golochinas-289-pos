@@ -1,6 +1,6 @@
 import { StorageService } from '../services/storage';
 import { formatearVE, formatearFechaDDMMYYYY, redondearExacto } from './formatters';
-import { CarritoItem, MovimientoKardex } from '../types';
+import { CarritoItem, MovimientoKardex, MultiPayment } from '../types';
 
 export function imprimirTicketPOS(
   idVenta: string,
@@ -94,7 +94,16 @@ export function imprimirTicketPOS(
         </div>
         
         <div style="border-bottom: 1px dashed #000; margin: 1mm 0;"></div>
-        <div>MÉTODO: ${metodoPago.toUpperCase()}</div>
+        <div>MÉTODO:
+          ${(() => {
+            try {
+              const payments = JSON.parse(metodoPago) as MultiPayment[];
+              return payments.map(p => `<br>- ${p.metodo}: Bs. ${formatearVE(p.montoBs)} ($${formatearVE(p.montoUsd)})`).join('');
+            } catch {
+              return metodoPago.toUpperCase();
+            }
+          })()}
+        </div>
         <div style="text-align:center; margin-top:5mm;">
             [QR CODE HERE]
         </div>

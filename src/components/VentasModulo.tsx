@@ -41,6 +41,7 @@ interface VentasModuloProps {
     total_bs: number;
     tasa_bcv: number;
     libro: 'FISCAL' | 'PRIVADO';
+    metodo_pago: string;
   }) => Promise<{ idVenta: string }>;
   onOpenScanner: (targetField: string) => void;
   onActualizarPrecioProducto?: (sku: string, rowId: string, nuevoPrecio: number) => Promise<void>;
@@ -440,7 +441,7 @@ export const VentasModulo: React.FC<VentasModuloProps> = ({
     ejecutarFinalizarVenta(modo);
   };
 
-  const ejecutarFinalizarVenta = async (modo: 'imprimir' | 'pdf' = modoVentaPendiente) => {
+  const ejecutarFinalizarVenta = async (payments: MultiPayment[] = pagosMultimoneda) => {
     setModalConfirmarPreciosCero(false);
     setProcesando(true);
 
@@ -450,6 +451,7 @@ export const VentasModulo: React.FC<VentasModuloProps> = ({
     const snapshotUSD = totalUSD;
     const snapshotBs = totalBs;
     const snapshotTasa = tasas.tasaBcv;
+    const metodoPagoStr = JSON.stringify(payments);
 
     try {
       const res = await onProcesarVenta({
@@ -460,6 +462,7 @@ export const VentasModulo: React.FC<VentasModuloProps> = ({
         total_bs: snapshotBs,
         tasa_bcv: snapshotTasa,
         libro: libroVenta,
+        metodo_pago: metodoPagoStr
       });
 
       const formato = StorageService.getSettings().formatoImpresora;
@@ -503,7 +506,7 @@ export const VentasModulo: React.FC<VentasModuloProps> = ({
         totalUSD: snapshotUSD,
         totalBs: snapshotBs,
         tasaBCV: snapshotTasa,
-        metodo_pago: 'EFECTIVO' // Placeholder
+        metodo_pago: metodoPagoStr
       });
 
       vaciarCarrito();
