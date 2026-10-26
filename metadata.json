@@ -1,0 +1,6 @@
+{
+  "name": "GOLOCHINAS 289 - Sistema POS & Inventario",
+  "description": "Sistema POS, Inventario, Compras y Kardex para Android, PC y Tablet con soporte Online y Offline sincronizado con Google Sheets.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+@media print {
+  header, main, section, footer, .no-print, nav, #scanner-modal { 
+    display: none !important; 
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  #area-impresion { 
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+  }
+
+  @page {
+    size: auto;
+    margin: 0mm !important;
+  }
+
+  body.print-format-58mm .etiqueta-pop-exacta {
+    width: 44mm !important;
+    max-width: 44mm !important;
+    margin: 0 auto !important;
+    padding: 6mm 0.5mm 1mm 0.5mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+
+  body.print-format-80mm .etiqueta-pop-exacta {
+    width: 72mm !important;
+    max-width: 72mm !important;
+    margin: 0 auto !important;
+    padding: 6mm 1mm 2mm 1mm !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+
+  body.print-format-58mm .logo-lover-header {
+    width: auto !important;
+    max-width: 36mm !important;
+    height: auto !important;
+    max-height: 12mm !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto 1.5mm auto !important;
+  }
+
+  body.print-format-80mm .logo-lover-header {
+    width: auto !important;
+    max-width: 50mm !important;
+    height: auto !important;
+    max-height: 16mm !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto 2mm auto !important;
+  }
+
+  body.print-format-58mm .etiqueta-titulo-pop {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 8pt !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+    margin-bottom: 1.5mm !important;
+    color: #000000 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  body.print-format-80mm .etiqueta-titulo-pop {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 11pt !important;
+    font-weight: 900 !important;
+    text-transform: uppercase !important;
+    line-height: 1.1 !important;
+    margin-bottom: 2mm !important;
+    color: #000000 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  body.print-format-58mm .etiqueta-precio-pop {
+    font-family: 'Arial Black', Arial, sans-serif !important;
+    font-size: 24pt !important;
+    font-weight: 900 !important;
+    letter-spacing: -1px !important;
+    line-height: 0.85 !important;
+    margin: 1mm auto !important;
+    display: block !important;
+    color: #000000 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  body.print-format-80mm .etiqueta-precio-pop {
+    font-family: 'Arial Black', Arial, sans-serif !important;
+    font-size: 32pt !important;
+    font-weight: 900 !important;
+    letter-spacing: -1px !important;
+    line-height: 0.85 !important;
+    margin: 2mm auto !important;
+    display: block !important;
+    color: #000000 !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  body.print-format-58mm .etiqueta-linea-pop,
+  body.print-format-80mm .etiqueta-linea-pop {
+    border-top: 2px solid #000000 !important;
+    width: 85% !important;
+    margin: 1.5mm auto !important;
+    display: block !important;
+  }
+
+  body.print-format-58mm .etiqueta-pie-bcv,
+  body.print-format-58mm .etiqueta-pie-fecha {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 6pt !important;
+    font-weight: 900 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    margin-top: 0.3mm !important;
+    width: 100% !important;
+  }
+
+  body.print-format-80mm .etiqueta-pie-bcv,
+  body.print-format-80mm .etiqueta-pie-fecha {
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 7.5pt !important;
+    font-weight: 900 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    color: #000000 !important;
+    margin-top: 0.5mm !important;
+    width: 100% !important;
+  }
+
+  /* POS Ticket */
+  .ticket-venta-contenedor {
+    width: 48mm !important;
+    max-width: 48mm !important;
+    margin: 0 auto !important;
+    padding: 2mm 0.5mm 4mm 0.5mm !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 7.5pt !important;
+    line-height: 1.2 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.print-format-80mm .ticket-venta-contenedor {
+    width: 72mm !important;
+    max-width: 72mm !important;
+    font-size: 9pt !important;
+  }
+
+  .ticket-item-linea {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin: 1mm 0 !important;
+    font-weight: bold !important;
+  }
+
+  .estado-cuenta-print {
+    width: 100% !important;
+    max-width: 210mm !important;
+    padding: 8mm !important;
+    box-sizing: border-box !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
+}
+
+/* Google Sign-in Official Material Button */
+.gsi-material-button {
+  user-select: none;
+  background-color: #ffffff;
+  border: 1px solid #747775;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #1f1f1f;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Roboto', arial, sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  height: 40px;
+  letter-spacing: 0.25px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 12px;
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: background-color .218s, border-color .218s, box-shadow .218s;
+}
+
+.gsi-material-button:hover {
+  background-color: #f8fafd;
+  border-color: #0b57d0;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+}
+
+.gsi-material-button-icon {
+  height: 20px;
+  min-width: 20px;
+  width: 20px;
+  margin-right: 10px;
+}
+
+.gsi-material-button-contents {
+  font-weight: 600;
+}
